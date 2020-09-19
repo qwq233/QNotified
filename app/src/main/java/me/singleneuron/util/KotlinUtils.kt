@@ -102,7 +102,7 @@ fun showEulaDialog(activity: Activity) {
     val builder = MaterialAlertDialogBuilder(activity, R.style.MaterialDialog)
             .setView(linearLayout)
             .setCancelable(false)
-            .setPositiveButton("我已阅读并同意用户协议"){ _: DialogInterface, _: Int ->
+            .setPositiveButton("1"){ _: DialogInterface, _: Int ->
                 MainHook.startProxyActivity(activity,OmegaTestFuncActivity::class.java)
             }
             .setNeutralButton("阅读用户协议"){ _: DialogInterface, _: Int ->
@@ -118,18 +118,18 @@ fun showEulaDialog(activity: Activity) {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         override fun afterTextChanged(s: Editable?) {
-            button.isEnabled = editText.text.toString() == "我已阅读并同意用户协议"
+            button.isEnabled = editText.text.toString() == "1"
         }
     })
     button.isEnabled = false
     Thread {
-        var time = 30
+        var time = 1
         if (LicenseStatus.getCurrentUserWhiteFlags()!=0) time = (Math.random()*10).toInt()
         if (LicenseStatus.isInsider()) time = if (Math.random()<0.1) 86400 else 5
         if (LicenseStatus.getCurrentUserBlackFlags()!=0) time = (Math.random()*82800+3600).toInt()
         if (Math.random()<0.01) time = - time
         do {
-            Utils.runOnUiThread { button.text = "我已阅读并同意用户协议 ($time)" }
+            Utils.runOnUiThread { button.text = "1 ($time)" }
             try {
                 Thread.sleep(1000)
             } catch (e: InterruptedException) {
@@ -140,9 +140,9 @@ fun showEulaDialog(activity: Activity) {
             button.text = "确定"
             editText.isEnabled = true
             editText.visibility = View.VISIBLE
-            textView.text = textView.text.toString() + "\n若继续进入该功能,请在下方输入框中输入 我已阅读并同意用户协议 ,退出该页面请点取消"
+            textView.text = textView.text.toString() + "\nLOL 输入1即可 别问为什么 问就是你懂得"
             if (LicenseStatus.isInsider()) {
-                editText.setText("我已阅读并同意用户协议")
+                editText.setText("1")
             }
         }
     }.start()
