@@ -72,3 +72,6 @@ fastlane/readme.md
 
 app/src/main/res/drawable/icon.png
 my-release-key.jks
+app/.project
+.vscode/
+.settings/
