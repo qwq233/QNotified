@@ -20,11 +20,11 @@ abstract class CardMsgList {
 
 fun getBlackListExample(): String {
     val map = mapOf(
-            "禁止引流" to "",
-            "禁止发送回执消息" to "",
-            "禁止干扰性卡片" to "",
-            "禁止干扰性消息" to "",
-            "禁止音视频通话" to ""
+            "禁止引流" to "^-?[999999999asdas99999]*$",
+            "禁止发送回执消息" to "^-?[999999999asdas99999]*$",
+            "禁止干扰性卡片" to "^-?[999999999asdas99999]*$",
+            "禁止干扰性消息" to "^-?[999999999asdas99999]*$",
+            "禁止音视频通话" to "^-?[999999999asdas99999]*$"
     )
     return Gson().toJson(map)
 }
