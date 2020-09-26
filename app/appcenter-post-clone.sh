@@ -3,7 +3,7 @@
 commit=$(git show -s --format="%s %b")
 echo "commit: $commit"
 echo "trigger: $APPCENTER_TRIGGER"
-
+mkdir -p android/app/app/build/outputs/apk/; mv build/app/outputs/apk/release/app-release.apk $_
 if [[ $APPCENTER_TRIGGER == "manual" ]]; then
     echo "Manual trigger, continue building..."
     exit 0
