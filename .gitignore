@@ -75,3 +75,5 @@ my-release-key.jks
 app/.project
 .vscode/
 .settings/
+app/.classpath
+app/signing.gradle
