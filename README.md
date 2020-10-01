@@ -1,6 +1,6 @@
 # QNotified
 
-[![Build status](https://build.appcenter.ms/v0.1/apps/b140a458-831c-4cc1-933b-e3518e1cc84a/branches/master/badge)](https://install.appcenter.ms/users/qwq233/apps/qn/distribution_groups/alpha)
+[![Build Status](https://apk.qwq2333.top/job/QNotified/badge/icon)](https://apk.qwq2333.top/job/QNotified/)
 [![license](https://img.shields.io/github/license/qwq233/QNotified.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![GitHub release](https://img.shields.io/github/release/qwq233/QNotified.svg)](https://github.com/ferredoxin/QNotified/releases/latest) 
 
