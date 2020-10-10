@@ -8,6 +8,7 @@ import nil.nadph.qnotified.util.Initiator
 import nil.nadph.qnotified.util.Nullable
 import nil.nadph.qnotified.util.Utils
 import java.lang.reflect.Method
+import java.lang.reflect.Modifier
 
 fun Context.showToastBySystem(text: CharSequence, duration: Int = Toast.LENGTH_SHORT) {
     if (Looper.getMainLooper() == Looper.myLooper())
@@ -26,28 +27,13 @@ fun setZeroHeightWeight(v: View) {
     v.layoutParams.height = 0
 }
 
-fun logd(msg: String) {
-    Utils.logd("好耶 $msg")
-}
-
-fun logd(i: Int, msg: String? = "") {
-    when (i) {
-        0 -> logd("找到类了 $msg")
-        1 -> logd("找到方法了 $msg")
-        2 -> logd("开始Hook了 $msg")
-        3 -> logd("开始搞事情了 $msg")
-        4 -> logd("搞完事情了 $msg")
-        5 -> logd("搞出大事情了 \n$msg")
-    }
-}
-
 fun log(t: Throwable) {
     Utils.log(t)
 }
 
 @Nullable
-fun getObjectOrNull(obj: Any?, str: String, clz: Class<*>? = null): Any? {
-    return Utils.iget_object_or_null(obj, str, clz)
+fun getObjectOrNull(obj: Any?, objName: String, clz: Class<*>? = null): Any? {
+    return Utils.iget_object_or_null(obj, objName, clz)
 }
 
 fun putObject(obj: Any?, name: String, value: Any, type: Class<*>? = null) {
@@ -60,4 +46,12 @@ fun loadClass(clzName: String): Class<*> {
 
 fun getMethods(clzName: String): Array<Method> {
     return Initiator.load(clzName).declaredMethods
+}
+
+fun getMethods(clz: Class<Any>): Array<Method> {
+    return clz.declaredMethods
+}
+
+fun Method.isStatic(): Boolean {
+    return Modifier.isStatic(this.modifiers)
 }

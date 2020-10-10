@@ -51,7 +51,7 @@ import static nil.nadph.qnotified.ui.ViewBuilder.newLinearLayoutParams;
 
 @SuppressLint("Registered")
 public class EulaActivity extends IphoneTitleBarActivityCompat implements View.OnClickListener {
-    public static final int CURRENT_EULA_VERSION = 5;
+    public static final int CURRENT_EULA_VERSION = 6;
     private static final int R_ID_I_HAVE_READ = 0x300AFF91;
     private static final int R_ID_I_AGREE = 0x300AFF92;
     private static final int R_ID_I_DENY = 0x300AFF93;
@@ -96,6 +96,8 @@ public class EulaActivity extends IphoneTitleBarActivityCompat implements View.O
             sb.append(Log.getStackTraceString(e));
         }
         try {
+            sb.append(Utils.getFileContent(ResUtils.openAsset("eula.txt")));
+            sb.append("\n\n");
             sb.append(Utils.getFileContent(ResUtils.openAsset("privacy_license.txt")));
         } catch (IOException e) {
             sb.append(Log.getStackTraceString(e));
@@ -111,7 +113,7 @@ public class EulaActivity extends IphoneTitleBarActivityCompat implements View.O
         tv.setTextSize(23);
         tv.setGravity(Gravity.CENTER);
         tv.setTextColor(ResUtils.skin_black);
-        tv.setText("\n注意: 本软件是免费软件!\nQNotified自始至终都是免费且非商业使用，如果有你发现有人商用本软件并牟取利润(群发,代发,引流,出售,贩卖等)，请拒绝并不遗余力地在一切平台举报投诉他！\n");
+        tv.setText("\n注意: 本软件是免费软件!\nQNotified自始至终都是免费且非商业使用，如果有你发现有人在违反GPL和最终用户许可（主要为未明确指出本软件的作者以及免费获取的网址）的情况下商用本软件并牟取利润(群发,代发,引流,出售,贩卖等)，请拒绝并不遗余力地在一切平台举报投诉他！\n");
         ll.addView(tv, stdlp);
 
         int _5dp = Utils.dip2px(this, 5);
