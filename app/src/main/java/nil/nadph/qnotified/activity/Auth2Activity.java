@@ -174,7 +174,7 @@ public class Auth2Activity extends IphoneTitleBarActivityCompat implements View.
                 nextStep.setText("验证已完成");
             } else {
                 rightBtn.setVisibility(View.GONE);
-                if ((getCurrentUserWhiteFlags() & UserFlagConst.WF_BYPASS_AUTH_2) != 0) {
+                if (true) {
                     bypassMode = true;
                     nextStep.setText("AUTH_2 白名单用户免验证");
                 } else {
