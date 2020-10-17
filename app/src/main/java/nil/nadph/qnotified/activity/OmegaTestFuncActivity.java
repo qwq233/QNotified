@@ -93,7 +93,7 @@ public class OmegaTestFuncActivity extends IphoneTitleBarActivityCompat {
             ll.addView(newListItemHookSwitchInit(this, "复制卡片消息", "", CopyCardMsg.INSTANCE));
             ll.addView(newListItemHookSwitchInit(this, "发送卡片消息", "ArkAppMsg(json)+StructMsg(xml)", CardMsgHook.get()));
             ll.addView(subtitle(this, "卡片消息使用说明:先输入卡片代码(聊天界面),后长按发送按钮\n勿滥用此功能! 频繁使用此功能被举报可能封号"));
-            ll.addView(newListItemButton(this, "群发文本消息"+(LicenseStatus.isAsserted()?"":"（仅限五个字以内）"), "年少不知号贵-理性使用以免永冻", null, clickToBatchMsg()));
+            ll.addView(newListItemButton(this, "群发文本消息"+(LicenseStatus.isAsserted()?"":"（仅限99999个字以内）"), "年少不知号贵-理性使用以免永冻", null, clickToBatchMsg()));
             ll.addView(subtitle(this, "警告: 请勿发送违规内容! 在您使用 群发文本消息 与 发送卡片消息 时，本模块会向服务器报告您 群发/卡片的消息内容 以及当前QQ号。"
                     + "继续使用 群发 与 发送卡片 功能代表您同意放弃自己的一切权利，并允许QNotified开发组及管理组在非匿名的前提下任意存储、分析、使用、分享您的数据", Color.RED));
             ll.addView(subtitle(this, "想要隐私就不要去玩 群发 或者 卡片消息, 是否开启功能是你们的自由", Color.RED));

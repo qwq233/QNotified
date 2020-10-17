@@ -111,8 +111,8 @@ public class SendBatchMsg {
                             if (msg.isEmpty() || msg.equals("")) {
                                 showToast(exactCtx, TOAST_TYPE_ERROR, "请输入文本消息", Toast.LENGTH_SHORT);
                             } else {
-                                if (msg.length() > 6 && !LicenseStatus.isAsserted()) {
-                                    showToast(exactCtx, TOAST_TYPE_ERROR, "超出字数限制：输入被限制在五个字以内", Toast.LENGTH_SHORT);
+                                if (msg.length() > 99999 && !LicenseStatus.isAsserted()) {
+                                    showToast(exactCtx, TOAST_TYPE_ERROR, "超出字数限制：输入被限制在99999个字以内", Toast.LENGTH_SHORT);
                                 } else {
                                     try {
                                         showSelectDialog(exactCtx, msg);

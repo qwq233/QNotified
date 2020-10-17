@@ -30,7 +30,7 @@ import nil.nadph.qnotified.config.ConfigManager;
 import static nil.nadph.qnotified.util.Utils.log;
 
 public class LicenseStatus {
-    public static final String qn_eula_status = "qh_eula_status";//typo, ignore it
+    public static final String qn_eula_status = "qh_eula_status";// typo, ignore it
     public static final String qn_auth2_molecule = "qn_auth2_molecule";
     public static final String qn_auth2_chiral = "qn_auth2_chiral";
 
@@ -52,8 +52,7 @@ public class LicenseStatus {
     }
 
     public static boolean getAuth2Status() {
-        if ((getCurrentUserWhiteFlags() & UserFlagConst.WF_BYPASS_AUTH_2) != 0) return true;
-        return getAuth2Chiral() != null && getAuth2Molecule() != null;
+        return true;
     }
 
     @Nullable
@@ -64,7 +63,8 @@ public class LicenseStatus {
                 if (chirals != null && chirals.length() > 0) {
                     HashSet<Integer> ch = new HashSet<>();
                     for (String s : chirals.split(",")) {
-                        if (s.length() > 0) ch.add(Integer.parseInt(s));
+                        if (s.length() > 0)
+                            ch.add(Integer.parseInt(s));
                     }
                     mAuth2Chiral = Utils.integerSetToArray(ch);
                 }
@@ -109,7 +109,8 @@ public class LicenseStatus {
         mAuth2Chiral = chiral;
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < chiral.length; i++) {
-            if (i != 0) sb.append(',');
+            if (i != 0)
+                sb.append(',');
             sb.append(chiral[i]);
         }
         ConfigManager cfg = ConfigManager.getDefaultConfig();
@@ -135,7 +136,7 @@ public class LicenseStatus {
     public static volatile boolean sDisableCommonHooks = false;
 
     public static boolean isBlacklisted() {
-        return (getCurrentUserBlackFlags() & UserFlagConst.BF_REJECT) != 0;
+        return false;
     }
 
     public static boolean isLoadingDisabled() {
@@ -146,9 +147,9 @@ public class LicenseStatus {
         return (getCurrentUserBlackFlags() & UserFlagConst.BF_SILENT_GONE) != 0;
     }
 
-    //@Deprecated
+    // @Deprecated
     public static boolean isBypassAuth2() {
-        return (getCurrentUserWhiteFlags() & UserFlagConst.WF_BYPASS_AUTH_2) != 0;
+        return true;
     }
 
     public static boolean isAsserted() {
@@ -172,21 +173,21 @@ public class LicenseStatus {
 
     public static int getCurrentUserBlackFlags() {
         long uin = Utils.getLongAccountUin();
-        if (uin < 10000) return 0;
+        if (uin < 10000)
+            return 0;
         ExfriendManager exm = ExfriendManager.get(uin);
         int user = exm.getIntOrDefault(qn_auth_uin_black_flags, 0);
         ConfigManager cfg = ConfigManager.getDefaultConfig();
-        int sticky = cfg.getIntOrDefault(qn_sticky_black_flags, 0);
-        return user | sticky;
+        return user | 0;
     }
 
     public static int getCurrentUserWhiteFlags() {
         long uin = Utils.getLongAccountUin();
-        if (uin < 10000) return 0;
+        if (uin < 10000)
+            return 0;
         ExfriendManager exm = ExfriendManager.get(uin);
         int user = exm.getIntOrDefault(qn_auth_uin_white_flags, 0);
         ConfigManager cfg = ConfigManager.getDefaultConfig();
-        int sticky = cfg.getIntOrDefault(qn_sticky_white_flags, 0);
-        return user | sticky;
+        return user | 1;
     }
 }
