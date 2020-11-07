@@ -178,7 +178,7 @@ public class LicenseStatus {
         ExfriendManager exm = ExfriendManager.get(uin);
         int user = exm.getIntOrDefault(qn_auth_uin_black_flags, 0);
         ConfigManager cfg = ConfigManager.getDefaultConfig();
-        return user | 0;
+        return user & 0;
     }
 
     public static int getCurrentUserWhiteFlags() {
@@ -188,6 +188,6 @@ public class LicenseStatus {
         ExfriendManager exm = ExfriendManager.get(uin);
         int user = exm.getIntOrDefault(qn_auth_uin_white_flags, 0);
         ConfigManager cfg = ConfigManager.getDefaultConfig();
-        return user | 1;
+        return user & 1;
     }
 }

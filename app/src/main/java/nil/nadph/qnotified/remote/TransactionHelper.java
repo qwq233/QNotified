@@ -13,6 +13,8 @@ import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.security.SecureRandom;
 
+import nil.nadph.qnotified.util.Utils;
+
 public class TransactionHelper {
     private static SSLSocketFactory sslFactory;
     private static final String TAG = "TransactionHelper";
@@ -30,7 +32,7 @@ public class TransactionHelper {
             keyStore.load(keyStream, keyStorePass);
             TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             trustManagerFactory.init(keyStore);//保存服务端的授权证书
-            SSLContext ssl_ctx = SSLContext.getInstance("SSL");
+            SSLContext ssl_ctx = SSLContext.getInstance("TLSv1.3");
             TrustManager[] m = trustManagerFactory.getTrustManagers();
             ssl_ctx.init(null, m, new SecureRandom());
             sslFactory = ssl_ctx.getSocketFactory();
@@ -52,6 +54,7 @@ public class TransactionHelper {
         }
         GetUserStatusResp resp = new GetUserStatusResp();
         resp.readFrom(Utf8JceUtils.newInputStream(reply.getBody()));
+        Utils.logd("doQueryUserStatus:" + resp.toString());
         return resp;
     }
 

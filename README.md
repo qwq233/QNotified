@@ -10,7 +10,7 @@
 
 ---
 
-等(zuo)不(si)及的小伙伴可以: [CI构建下载](https://install.appcenter.ms/orgs/qnotifieddev/apps/qnotified/distribution_groups/alpha) (危!富含bug与兼容性问题,PR可能含恶意代码,自行承担风险)
+等(zuo)不(si)及的小伙伴可以: [CI构建下载](https://apk.qwq2333.top/job/QNotified/) (危!富含bug与兼容性问题,PR可能含恶意代码,自行承担风险)
 
 QNotified（以下简称本模块）是一款依赖 Xposed框架运行的辅助性QQ功能增强模块, 本模块无毒无害, 免费开源, 旨在:  
 
