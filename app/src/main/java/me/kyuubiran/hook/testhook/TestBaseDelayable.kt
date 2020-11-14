@@ -24,13 +24,13 @@ object TestBaseDelayable : BaseDelayableHook() {
     }
 
     override fun init(): Boolean {
-        if (isInited) return true
+        if (isInit) return true
         return try {
             for (m: Method in getMethods("className")) {
                 val argt = m.parameterTypes
                 if (m.name == "methodName" && argt.size == 1) {
                     XposedBridge.hookMethod(m, object : XC_MethodHook() {
-                        override fun beforeHookedMethod(param: MethodHookParam?) {
+                        override fun beforeHookedMethod(param: MethodHookParam) {
                             if (LicenseStatus.sDisableCommonHooks) return
                             if (!isEnabled) return
                             Utils.logd("这是一个BaseDelayable模板")
