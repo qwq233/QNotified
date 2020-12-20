@@ -27,7 +27,7 @@ QNotified is a Xposed module for mobile QQ that aims to:
 - **适配QQ版本** : 普通版QQ,TIM (全版本)
 - **使用方法** : 在Xposed Installer 激活模块后，在QQ自带设置中点击QNotified即可开关对应功能。
 - 关于删好友通知:  **(从安装并激活日起生效，无法查看安装本模块以前删除自己的好友!)** ,自己删除好友没有多余提示但是有记录。激活模块后自动检测，无需手动配置.
-- QQ内模块界面主题自动跟随 QQ主题 或 Substratum主题如MaterialQQ - GoogleBlue 或 ColorQQ(2) . 
+- QQ内模块界面主题自动跟随 QQ主题 或 Substratum主题如MaterialQQ - GoogleBlue 或 ColorQQ(2) .  
 
 ## 一切开发旨在学习，请勿用于非法用途
 
