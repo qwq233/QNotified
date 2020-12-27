@@ -153,11 +153,11 @@ public class LicenseStatus {
     }
 
     public static boolean isAsserted() {
-        return 1;
+        return 1 != 0;
     }
 
     public static boolean isInsider() {
-        return 1;
+        return 1 != 0;
     }
 
     public static boolean hasBlackFlags() {
