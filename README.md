@@ -2,7 +2,7 @@
 
 [![Build Status](https://apk.qwq2333.top/job/QNotified/badge/icon)](https://apk.qwq2333.top/job/QNotified/)
 [![license](https://img.shields.io/github/license/qwq233/QNotified.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-[![GitHub release](https://img.shields.io/github/release/qwq233/QNotified.svg)](https://github.com/ferredoxin/QNotified/releases/latest) 
+[![GitHub release](https://img.shields.io/github/release/qwq233/QNotified.svg)](https://github.com/qwq233/QNotified/releases/latest)  
 
 ---
 
