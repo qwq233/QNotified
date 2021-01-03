@@ -1,5 +1,6 @@
 package me.singleneuron.qn_kernel.tlb
 
+import me.nextalone.hook.ForcedSendOriginalPhoto
 import me.nextalone.hook.HideProfileBubble
 import me.singleneuron.hook.ChangeDrawerWidth
 import me.singleneuron.hook.ForceSystemCamera
@@ -14,10 +15,15 @@ object ConfigTable {
     private val configs: Map<String?, Map<Long, Any>> = mapOf(
 
             //去com.tencent.mobileqq.activity.recent.DrawerFrame类里面找一个奇怪的只有一行以一个ID从Resources获取DimensionPixelSize的方法（大概率在最末尾），然后把ID填过来
+            //一般是R.dimen.akx
             ChangeDrawerWidth::class.simpleName to mapOf(
                     QQVersion.QQ_8_4_1 to 0x7f090834,
                     QQVersion.QQ_8_4_5 to 0x7f090841,
-                    QQVersion.QQ_8_4_8 to 0x7f090882
+                    QQVersion.QQ_8_4_8 to 0x7f090882,
+                    QQVersion.QQ_8_4_10 to 0x7f90886,
+                    QQVersion.QQ_8_4_17 to 0x7f090896,
+                    QQVersion.QQ_8_4_18 to 0x7f090896,
+                    QQVersion.QQ_8_5_0 to 0x7f090921
             ),
 
             //特征字符串："FaceManager"
@@ -69,7 +75,19 @@ object ConfigTable {
                     QQVersion.QQ_8_4_1 to "azfl",
                     QQVersion.QQ_8_4_5 to "azxy",
                     QQVersion.QQ_8_4_8 to "aymn"
+            ),
+
+            //一般是R.id.h1y
+            ForcedSendOriginalPhoto::class.java.simpleName to mapOf(
+                    QQVersion.QQ_8_4_1 to 0x7f0a3262,
+                    QQVersion.QQ_8_4_5 to 0x7f0a32eb,
+                    QQVersion.QQ_8_4_8 to 0x7f0a3200,
+                    QQVersion.QQ_8_4_10 to 0x7f0a32f0,
+                    QQVersion.QQ_8_4_17 to 0x7f0a33cc,
+                    QQVersion.QQ_8_4_18 to 0x7f0a33cc,
+                    QQVersion.QQ_8_5_0 to 0x7f0a347a
             )
+
     )
 
     fun <T> getConfig(className: String?): T {
