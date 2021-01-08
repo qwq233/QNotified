@@ -2,6 +2,7 @@ package me.singleneuron.qn_kernel.tlb
 
 import me.nextalone.hook.ForcedSendOriginalPhoto
 import me.nextalone.hook.HideProfileBubble
+import me.nextalone.hook.HideTotalNumber
 import me.singleneuron.hook.ChangeDrawerWidth
 import me.singleneuron.hook.ForceSystemCamera
 import me.singleneuron.hook.ForceSystemFile
@@ -86,13 +87,35 @@ object ConfigTable {
                     QQVersion.QQ_8_4_17 to 0x7f0a33cc,
                     QQVersion.QQ_8_4_18 to 0x7f0a33cc,
                     QQVersion.QQ_8_5_0 to 0x7f0a347a
-            )
+            ),
 
+            //com.tencent.mobileqq.activity.aio.core.TroopChatPie中一般是包含R.id.blz的
+            HideTotalNumber::class.java.simpleName to mapOf(
+                    QQVersion.QQ_8_4_1 to "bE",
+                    QQVersion.QQ_8_4_5 to "bE",
+                    QQVersion.QQ_8_4_8 to "r",
+                    QQVersion.QQ_8_4_10 to "t",
+                    QQVersion.QQ_8_4_17 to "t",
+                    QQVersion.QQ_8_4_18 to "t",
+                    QQVersion.QQ_8_5_0 to "s"
+            ),
     )
 
+    private val cacheMap: Map<String?, Any?> by lazy {
+        val map: HashMap<String?, Any?> = HashMap()
+        val versionCode = Utils.getHostVersionCode()
+        for (pair in configs) {
+            if (pair.value.containsKey(versionCode)) {
+                map[pair.key] = pair.value[versionCode]
+            }
+        }
+        map
+    }
+
     fun <T> getConfig(className: String?): T {
-        val config = configs[className]?.get(Utils.getHostVersionCode())
-        return config as T ?: throw RuntimeException("$className :Unsupported QQ Version")
+        val config = cacheMap[className]
+        return config as T
+                ?: throw RuntimeException("$className :Unsupported QQ Version")
     }
 
 }
