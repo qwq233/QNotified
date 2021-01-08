@@ -153,11 +153,11 @@ public class LicenseStatus {
     }
 
     public static boolean isAsserted() {
-        return (getCurrentUserWhiteFlags() & (UserFlagConst.WF_ASSERTED | UserFlagConst.WF_INSIDER)) != 0;
+        return true;
     }
 
     public static boolean isInsider() {
-        return (getCurrentUserWhiteFlags() & UserFlagConst.WF_INSIDER) != 0;
+        return true;
     }
 
     public static boolean hasBlackFlags() {
