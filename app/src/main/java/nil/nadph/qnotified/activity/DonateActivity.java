@@ -1,6 +1,6 @@
 /* QNotified - An Xposed module for QQ/TIM
  * Copyright (C) 2019-2020 xenonhydride@gmail.com
- * https://github.com/ferredoxin/QNotified
+ * https://github.com/qwq233/QNotified
  *
  * This software is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -113,7 +113,7 @@ public class DonateActivity extends IphoneTitleBarActivityCompat {
         ll.addView(subtitle(this, "每多一个人免费地分发本软件,可能因贩卖上当的人就少一个"));
         ll.addView(subtitle(this, "譬如说,可以在各大玩机论坛社区以资源分享的方式分发免费软件(包括但不限于本模块,尽量别设置回复可见)"));
         ll.addView(subtitle(this, "当然以上只是其中一种方法"));
-        ll.addView(subtitle(this, "本软件首发地为 https://github.com/ferredoxin/QNotified (求star/issue/pull request)"));
+        ll.addView(subtitle(this, "本软件首发地为 https://github.com/qwq233/QNotified (求star/issue/pull request)"));
         ll.addView(subtitle(this, "最后,谢谢你的支持"));
         ll.addView(subtitle(this, "by"));
         ll.addView(newListItemButton(this, "更新频道", null, "@QNotified", clickToUrl("https://t.me/QNotified")));

@@ -1,6 +1,6 @@
 /* QNotified - An Xposed module for QQ/TIM
  * Copyright (C) 2019-2020 xenonhydride@gmail.com
- * https://github.com/ferredoxin/QNotified
+ * https://github.com/qwq233/QNotified
  *
  * This software is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -182,7 +182,7 @@ public class ConfigV2Activity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.mainV2_githubRepo: {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("https://github.com/ferredoxin/QNotified"));
+                intent.setData(Uri.parse("https://github.com/qwq233/QNotified"));
                 startActivity(intent);
                 break;
             }

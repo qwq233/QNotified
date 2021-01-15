@@ -163,7 +163,9 @@ public abstract class AbsDelayableHook implements SwitchConfigItem {
                     ForcedSendOriginalPhoto.INSTANCE,
                     InterceptZipBomb.INSTANCE,
                     HideTotalNumber.INSTANCE,
-                    HideOnlineNumber.INSTANCE
+                    HideOnlineNumber.INSTANCE,
+                    BlockFluxThief.INSTANCE,
+                    MultiActionHook.get(),
             };
         }
         return sAllHooks;

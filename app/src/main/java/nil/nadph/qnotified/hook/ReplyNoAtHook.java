@@ -1,6 +1,6 @@
 /* QNotified - An Xposed module for QQ/TIM
  * Copyright (C) 2019-2020 xenonhydride@gmail.com
- * https://github.com/ferredoxin/QNotified
+ * https://github.com/qwq233/QNotified
  *
  * This software is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -63,7 +63,9 @@ public class ReplyNoAtHook extends BaseDelayableHook {
         try {
             String method = null;
             int ver = getHostVersionCode32();
-            if (ver >= 1492) {
+            if (ver >= 1630) {
+                method = "l";
+            } else if (ver >= 1492) {
                 method = "createAtMsg";
             } else if (ver >= 1406) {
                 method = "n";

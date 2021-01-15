@@ -1,6 +1,6 @@
 /* QNotified - An Xposed module for QQ/TIM
  * Copyright (C) 2019-2020 xenonhydride@gmail.com
- * https://github.com/ferredoxin/QNotified
+ * https://github.com/qwq233/QNotified
  *
  * This software is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -42,7 +42,7 @@ import static nil.nadph.qnotified.util.Utils.log;
 @MainProcess
 public class NewsHelper implements Runnable {
 
-    public static final String NEWS_INFO_GET2 = "https://raw.githubusercontent.com/ferredoxin/QNotified/master/news.json";
+    public static final String NEWS_INFO_GET2 = "https://raw.githubusercontent.com/qwq233/QNotified/master/news.json";
     public static final String NEWS_INFO_GET1 = "https://gitee.com/kernelex/QNotified/raw/master/news.json";
     private static final String QN_CACHED_NEWS = "qn_cached_news";
     private static final int INTERVAL_SEC = 3600;
